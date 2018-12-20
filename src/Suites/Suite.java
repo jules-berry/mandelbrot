@@ -8,7 +8,9 @@ public abstract class Suite {
 
     public Complexe z;
 
+    public static final int ITER_BORNEE = 100000;
+
     public abstract Complexe iterer();
 
-    public abstract boolean bornee();
+    public abstract double bornee();
 }

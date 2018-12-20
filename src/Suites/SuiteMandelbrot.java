@@ -21,15 +21,17 @@ public class SuiteMandelbrot extends Suite{
     }
 
     @Override
-    public boolean bornee() {
+    public double bornee() {
+        double sommeNormes = 0;
         z = z0;
-        for(int i=0; i<500;i++){
+        for(int i=0; i<ITER_BORNEE;i++){
             iterer();
             double n = z.norme();
             if(Double.isInfinite(n) || Double.isNaN(n)){
-                return false;
+                return i;
             }
+            sommeNormes += z.norme();
         }
-        return true;
+        return -sommeNormes/ITER_BORNEE;
     }
 }
